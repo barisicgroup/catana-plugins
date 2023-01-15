@@ -1,0 +1,26 @@
+# Define default properties of the script
+interval = 60
+transparent = True
+screenshotName = "progress_screenshot"
+
+if has_global_variable("scr_interval"):
+	interval = get_global_variable("scr_interval")
+
+if has_global_variable("scr_transparent"):
+	transparent = get_global_variable("scr_transparent")
+
+# Script code
+checkVar = "lastCheckTime"
+lastCheck = 0
+
+dt = get_delta_time()
+if has_global_variable(checkVar):
+	lastCheck = get_global_variable(checkVar)
+
+currTime = lastCheck + dt
+
+if currTime > interval:
+	set_global_variable(checkVar, 0)
+	download_screenshot(screenshotName, transparent)
+else:
+	set_global_variable(checkVar, currTime)
