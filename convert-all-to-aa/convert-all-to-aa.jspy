@@ -1,0 +1,5 @@
+comps = get_components()
+
+for c of comps:
+	if is_coarse_grained(c):
+		convert_cg_component_to_aa(c)
