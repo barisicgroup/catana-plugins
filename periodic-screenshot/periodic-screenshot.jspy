@@ -2,14 +2,22 @@
 interval = 60
 transparent = True
 screenshotName = "progress_screenshot"
-
-if has_global_variable("scr_interval"):
-	interval = get_global_variable("scr_interval")
-
-if has_global_variable("scr_transparent"):
-	transparent = get_global_variable("scr_transparent")
+intervalVar = "scr_interval"
+transparentVar = "scr_transparent"
 
 # Script code
+if has_global_variable(intervalVar) == False:
+	i = int(show_prompt("Input interval (s):", interval))
+	set_global_variable(intervalVar, i)
+
+interval = get_global_variable(intervalVar)
+	
+if has_global_variable(transparentVar) == False:
+	t = show_confirm("Make transparent screenshots?")
+	set_global_variable(transparentVar, t)
+
+transparent = get_global_variable(transparentVar)
+
 checkVar = "lastCheckTime"
 lastCheck = 0
 
