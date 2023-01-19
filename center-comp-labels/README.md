@@ -1,6 +1,6 @@
-# Centroid Component Labels
+# Center Component Labels
 
-This plugin enables to show annotation/label placed roughly at the centroid of each component.
+This plugin shows annotation/label with component name placed near the center of each component.
 
 ## How to Use
 1. Install/load this plugin
