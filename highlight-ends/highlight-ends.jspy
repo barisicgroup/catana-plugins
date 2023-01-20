@@ -1,0 +1,29 @@
+# Define functions
+
+def process_residue(res, col):
+	global.centers = global.centers.concat(get_residue_position(res))
+	global.colors.push(col)
+	global.radii.push(4)
+
+def chain_callback(chain):
+		len = get_chain_length(chain)
+		if len > 0 and (is_protein_chain(chain) or is_nucleic_chain(chain)):
+			process_residue(get_residue_at_index(chain, 0), "#00FF00")
+			process_residue(get_residue_at_index(chain, len - 1), "#FF0000")
+
+# Define code to be executed
+
+global.centers = []
+global.colors = []
+global.radii = []
+opacity = 0.5
+comps = get_components()
+
+remove_disposables()
+
+for i in range(0, len(comps)):
+	if is_all_atom(comps[i]) or is_coarse_grained(comps[i]):
+		struc = get_structure_from_component(comps[i])
+		each_chain(struc, chain_callback)
+
+mark_disposable(add_spheres(global.centers, global.colors, global.radii, opacity))
