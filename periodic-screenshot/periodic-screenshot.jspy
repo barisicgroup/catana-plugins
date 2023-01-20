@@ -6,29 +6,29 @@ intervalVar = "scr_interval"
 transparentVar = "scr_transparent"
 
 # Script code
-if has_global_variable(intervalVar) == False:
+if has_shared_var(intervalVar) == False:
 	i = int(show_prompt("Input interval (s):", interval))
-	set_global_variable(intervalVar, i)
+	set_shared_var(intervalVar, i)
 
-interval = get_global_variable(intervalVar)
+interval = get_shared_var(intervalVar)
 	
-if has_global_variable(transparentVar) == False:
+if has_shared_var(transparentVar) == False:
 	t = show_confirm("Make transparent screenshots?")
-	set_global_variable(transparentVar, t)
+	set_shared_var(transparentVar, t)
 
-transparent = get_global_variable(transparentVar)
+transparent = get_shared_var(transparentVar)
 
 checkVar = "lastCheckTime"
 lastCheck = 0
 
 dt = get_delta_time()
-if has_global_variable(checkVar):
-	lastCheck = get_global_variable(checkVar)
+if has_shared_var(checkVar):
+	lastCheck = get_shared_var(checkVar)
 
 currTime = lastCheck + dt
 
 if currTime > interval:
-	set_global_variable(checkVar, 0)
+	set_shared_var(checkVar, 0)
 	download_screenshot(screenshotName, transparent)
 else:
-	set_global_variable(checkVar, currTime)
+	set_shared_var(checkVar, currTime)
