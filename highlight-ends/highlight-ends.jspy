@@ -1,7 +1,8 @@
 # Define functions
-
 def process_residue(res, col):
-	global.centers = global.centers.concat(get_residue_position(res))
+	rLocPos = get_residue_position(res)
+	rWorPos = multiply_matrix_vector(global.compMat, rLocPos)
+	global.centers = global.centers.concat(rWorPos)
 	global.colors.push(col)
 	global.radii.push(4)
 
@@ -12,18 +13,18 @@ def chain_callback(chain):
 		process_residue(get_residue_at_index(chain, len - 1), "#FF0000")
 
 # Define code to be executed
-
 global.centers = []
 global.colors = []
 global.radii = []
+global.compMat = None
 opacity = 0.5
-comps = get_components()
+comps = get_structural_components()
 
 remove_disposables()
 
 for i in range(0, len(comps)):
-	if is_all_atom(comps[i]) or is_coarse_grained(comps[i]):
-		struc = get_structure_from_component(comps[i])
-		each_chain(struc, chain_callback)
+	global.compMat = get_component_matrix(comps[i])
+	struc = get_structure_from_component(comps[i])
+	each_chain(struc, chain_callback)
 
 mark_disposable(add_spheres(global.centers, global.colors, global.radii, opacity))
