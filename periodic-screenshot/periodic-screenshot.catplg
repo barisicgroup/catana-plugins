@@ -8,7 +8,9 @@
     "scripts": [
         "init.jspy",
         "periodic-screenshot.jspy",
-        "change-settings.jspy"
+        "change-settings.jspy",
+        "start.jspy",
+        "stop.jspy"
     ],
     "initScript": "init.jspy",
     "dependencies": []

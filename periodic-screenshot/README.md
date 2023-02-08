@@ -5,12 +5,12 @@ Thus, it can be used to easily document the work, backup what was seen in the sc
 
 ## How to Use
 1. Install/load this plugin
-2. Open plugin's properties window (Plugins – Periodic Screenshot Properties) and set your desired settings
-3. Go to Plugin Management and find script *periodic-screenshot.jspy* belonging to this plugin.
-4. Attach this script to the update call.
+2. Open plugin's modal window (Plugins – Periodic Screenshot) and set your desired settings
+3. Press "Confirm" button to change the settings 
+4. Press "Start" button to start making screenshots
 5. Done :)
-    - If you want to stop the screenshots from being generated, detach the script above
-    - To change the plugin properties, use again the modal window mentioned above
+    - If you want to stop the screenshots from being generated, press the "Stop" button
+    - To change the plugin properties, just modify them in the window and "Confirm" again
 
 ## Additional information
 The plugin creates two important shared variables in the background:  

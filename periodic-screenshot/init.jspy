@@ -1,27 +1,48 @@
+ui_elements = []
+
 label1 = {}
 label1.type = "text"
 label1.name = "num-label"
 label1.content = "Screenshot interval (s)"
+ui_elements.push(label1)
 
 input_interval = {}
 input_interval.type = "input-number"
 input_interval.name = "interval"
+ui_elements.push(input_interval)
 
 label2 = {}
 label2.type = "text"
 label2.name = "select-label"
 label2.content = "Transparent screenshots?"
+ui_elements.push(label2)
 
 select = {}
 select.type = "select"
 select.name = "transparent-select"
 select.options = ["Yes", "No"]
 select.allowMultiple = False
+ui_elements.push(select)
 
-button = {}
-button.type = "button"
-button.name = "confirm-button"
-button.content = "Confirm settings"
-button.callback = "periodic-screenshot::change-settings.jspy"
+conf_button = {}
+conf_button.type = "button"
+conf_button.name = "confirm-button"
+conf_button.content = "Confirm settings"
+conf_button.callback = "periodic-screenshot::change-settings.jspy"
+ui_elements.push(conf_button)
 
-add_modal_window("Periodic Screenshot Properties", [label1, input_interval, label2, select, button])
+start_button = {}
+start_button.type = "button"
+start_button.name = "start-button"
+start_button.content = "Start"
+start_button.callback = "periodic-screenshot::start.jspy"
+ui_elements.push(start_button)
+
+stop_button = {}
+stop_button.type = "button"
+stop_button.name = "confirm-button"
+stop_button.content = "Stop"
+stop_button.callback = "periodic-screenshot::stop.jspy"
+ui_elements.push(stop_button)
+
+add_modal_window("Periodic Screenshot", ui_elements)
