@@ -1,0 +1,27 @@
+label1 = {}
+label1.type = "text"
+label1.name = "num-label"
+label1.content = "Screenshot interval (s)"
+
+input_interval = {}
+input_interval.type = "input-number"
+input_interval.name = "interval"
+
+label2 = {}
+label2.type = "text"
+label2.name = "select-label"
+label2.content = "Transparent screenshots?"
+
+select = {}
+select.type = "select"
+select.name = "transparent-select"
+select.options = ["Yes", "No"]
+select.allowMultiple = False
+
+button = {}
+button.type = "button"
+button.name = "confirm-button"
+button.content = "Confirm settings"
+button.callback = "periodic-screenshot::change-settings.jspy"
+
+add_modal_window("Periodic Screenshot Properties", [label1, input_interval, label2, select, button])

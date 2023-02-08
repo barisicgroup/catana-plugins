@@ -1,0 +1,11 @@
+intervalVar = "scr_interval"
+transparentVar = "scr_transparent"
+
+if len(args) > 0:
+    valMap = args[0]
+    interval = valMap["interval"]
+    transparent = False
+    if valMap["transparent-select"][0] == "Yes":
+        transparent = True
+    set_shared_var(intervalVar, interval)
+    set_shared_var(transparentVar, transparent)

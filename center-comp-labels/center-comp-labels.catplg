@@ -1,0 +1,15 @@
+{
+    "name": "center-comp-labels",
+    "description": "This plugin shows annotation/label with component name placed near the center of each component.",
+    "version": "1.0.0",
+    "author": "David Kutak",
+    "thisUrlTemplate": "https://raw.githubusercontent.com/barisicgroup/catana-plugins/main/{name}/{file}",
+    "depsUrlTemplate": "",
+    "scripts": [
+        "init.jspy",
+        "show.jspy",
+        "hide.jspy"
+    ],
+    "initScript": "init.jspy",
+    "dependencies": []
+}

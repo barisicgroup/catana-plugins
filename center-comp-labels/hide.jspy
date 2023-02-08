@@ -1,0 +1,4 @@
+components = get_components()
+
+for i in range(len(components)):
+	remove_component_annotations(components[i])	

@@ -7,14 +7,12 @@ transparentVar = "scr_transparent"
 
 # Script code
 if has_shared_var(intervalVar) == False:
-	i = int(show_prompt("Input interval (s):", interval))
-	set_shared_var(intervalVar, i)
+	set_shared_var(intervalVar, interval)
 
 interval = get_shared_var(intervalVar)
 	
 if has_shared_var(transparentVar) == False:
-	t = show_confirm("Make transparent screenshots?")
-	set_shared_var(transparentVar, t)
+	set_shared_var(transparentVar, transparent)
 
 transparent = get_shared_var(transparentVar)
 

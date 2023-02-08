@@ -1,0 +1,6 @@
+if len(args) > 0:
+	valMap = args[0]
+	selComps = valMap["comp_select"]
+	for c of selComps:
+		if is_coarse_grained(c):
+			convert_cg_component_to_aa(c)

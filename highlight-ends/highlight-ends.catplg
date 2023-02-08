@@ -1,0 +1,15 @@
+{
+    "name": "highlight-ends",
+    "description": "This plugin highlights ends (N-term, C-term, 5', 3') of selected protein and nucleic chains (using a semi-transparent sphere).",
+    "version": "1.0.0",
+    "author": "David Kutak",
+    "thisUrlTemplate": "https://raw.githubusercontent.com/barisicgroup/catana-plugins/main/{name}/{file}",
+    "depsUrlTemplate": "",
+    "scripts": [
+        "init.jspy",
+        "highlight-ends.jspy",
+        "clear.jspy"
+    ],
+    "initScript": "init.jspy",
+    "dependencies": []
+}

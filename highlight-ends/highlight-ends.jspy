@@ -18,13 +18,14 @@ global.colors = []
 global.radii = []
 global.compMat = None
 opacity = 0.5
-comps = get_structural_components()
 
-remove_disposables()
-
-for i in range(0, len(comps)):
-	global.compMat = get_component_matrix(comps[i])
-	struc = get_structure_from_component(comps[i])
-	each_chain(struc, chain_callback)
-
-mark_disposable(add_spheres(global.centers, global.colors, global.radii, opacity))
+if len(args) > 0:
+	remove_disposables()
+	valMap = args[0]
+	selComps = valMap["comp_select"]
+	for c of selComps:
+		global.compMat = get_component_matrix(c)
+		struc = get_structure_from_component(c)
+		each_chain(struc, chain_callback)
+	if len(selComps) > 0:
+		mark_disposable(add_spheres(global.centers, global.colors, global.radii, opacity))

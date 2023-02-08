@@ -1,7 +1,6 @@
 components = get_components()
 
 for i in range(len(components)):
-	#remove_component_annotations(components[i])
 	center = get_component_center(components[i])
 	name = get_component_name(components[i])
 	add_component_annotation(components[i], center, name)

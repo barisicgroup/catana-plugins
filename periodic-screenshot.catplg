@@ -1,0 +1,11 @@
+{
+    "name": "periodic-screenshot",
+    "description": "This plugin enables to set a fixed time interval in which a screenshot of the current scene in Catana will be taken and downloaded.",
+    "version": "1.0.0",
+    "author": "David Kutak",
+    "thisUrlTemplate": "https://raw.githubusercontent.com/barisicgroup/catana-plugins/main/{name}/{file}",
+    "depsUrlTemplate": "",
+    "scripts": [],
+    "initScript": "",
+    "dependencies": []
+}

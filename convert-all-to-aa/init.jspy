@@ -1,0 +1,12 @@
+comp_select = {}
+comp_select.type = "component-select"
+comp_select.name = "comp_select"
+comp_select.allowMultiple = True
+
+convert_button = {}
+convert_button.type = "button"
+convert_button.name = "convert_btn"
+convert_button.content = "Convert selected components"
+convert_button.callback = "convert-all-to-aa::convert-components.jspy"
+
+add_modal_window("Convert Components To All-Atom", [comp_select, convert_button])
