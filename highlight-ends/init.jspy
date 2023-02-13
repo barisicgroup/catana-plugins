@@ -1,18 +1,21 @@
-comp_select = {}
-comp_select.type = "component-select"
-comp_select.name = "comp_select"
-comp_select.allowMultiple = True
+comp_select = {
+    type: "component-select",
+    name: "comp_select",
+    allowMultiple: True
+}
 
-highlight_button = {}
-highlight_button.type = "button"
-highlight_button.name = "highlight_btn"
-highlight_button.content = "Highlight ends"
-highlight_button.callback = "highlight-ends::highlight-ends.jspy"
+highlight_button = {
+    type: "button",
+    name: "highlight_btn",
+    content: "Highlight ends",
+    callback: "highlight-ends::highlight-ends.jspy"
+}
 
-clear_button = {}
-clear_button.type = "button"
-clear_button.name = "clear_btn"
-clear_button.content = "Clear"
-clear_button.callback = "highlight-ends::clear.jspy"
+clear_button = {
+    type: "button",
+    name: "clear_btn",
+    content: "Clear",
+    callback: "highlight-ends::clear.jspy"
+}
 
 add_modal_window("Highlight Ends", [comp_select, highlight_button, clear_button])

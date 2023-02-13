@@ -1,13 +1,15 @@
-show_button = {}
-show_button.type = "button"
-show_button.name = "show_btn"
-show_button.content = "Show labels"
-show_button.callback = "center-comp-labels::show.jspy"
+show_button = {
+    type: "button",
+    name: "show_btn",
+    content: "Show labels",
+    callback: "center-comp-labels::show.jspy"
+}
 
-hide_button = {}
-hide_button.type = "button"
-hide_button.name = "hide_btn"
-hide_button.content = "Hide labels"
-hide_button.callback = "center-comp-labels::hide.jspy"
+hide_button = {
+    type: "button",
+    name: "hide_btn",
+    content: "Hide labels",
+    callback: "center-comp-labels::hide.jspy"
+}
 
 add_modal_window("Center Component Labels", [show_button, hide_button])
